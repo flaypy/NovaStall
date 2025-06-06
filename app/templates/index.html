@@ -1,11 +1,41 @@
-{% extends "template.html" %}
+{% extends "template.html" %} <!-- Make sure 'template.html' is the actual filename of your base template -->
+{% load static %} <!-- If you need static files specific to this page -->
 
-{% block titulo %}Home{% endblock %}
+{% block title %}Página Inicial - NovaStall{% endblock %} <!-- Optional: Override the default title -->
 
-{% block main %}
-    <section class="hero">
-        <h1>Bem-vindo ao Meu Site Bacana!</h1>
-        <p>Conheça nossos produtos e serviços de alta qualidade. Oferecemos diversos produtos disponíveis para compra!</p>
-        <a href="{%url 'addUsuario'%}" class="btn-cadastro">Cadastre-se</a>
-    </section>
+{% block content %}
+    <!-- All the unique HTML content for your home page goes RIGHT HERE -->
+    <div class="container mt-4">
+        <div class="p-5 mb-4 bg-light rounded-3 shadow-sm">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Bem-vindo à NovaStall!</h1>
+                <p class="col-md-8 fs-4">Sua nova experiência em compras online. Explore nossos produtos e aproveite as melhores ofertas.</p>
+                <a href="/produtos" class="btn btn-primary btn-lg rounded-pill px-4" type="button">Ver Produtos <i class="fas fa-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+
+        <div class="row align-items-md-stretch">
+            <div class="col-md-6 mb-4">
+                <div class="h-100 p-5 text-white bg-dark rounded-3 shadow">
+                    <h2>Promoções</h2>
+                    <p>Confira nossas promoções imperdíveis desta semana. Estoque limitado!</p>
+                    <button class="btn btn-outline-light rounded-pill px-3" type="button">Ver Promoções</button>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="h-100 p-5 bg-light border rounded-3 shadow-sm">
+                    <h2>Novidades</h2>
+                    <p>Fique por dentro dos últimos lançamentos e novidades em nossa loja.</p>
+                    <button class="btn btn-outline-secondary rounded-pill px-3" type="button">Ver Novidades</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- You can add more sections, carousels, product highlights, etc. -->
+
+    </div>
+{% endblock %}
+
+{% block extra_scripts %}
+    <!-- Add any JavaScript specific to the index page here -->
 {% endblock %}
